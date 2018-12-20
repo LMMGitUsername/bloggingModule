@@ -40,6 +40,7 @@ Function Get-BlogEntryOneStep
     if($inGUI.IsPresent) {
 	    ."$PSScriptRoot\Get-BloggingModuleGUI.ps1"
         $stepOne = Get-BloggingModuleGUI
+		[System.Windows.MessageBox]::Show('Paste (Ctrl+v) in the editor of your choice.')
     }
     else {
 	    ."$PSScriptRoot\Get-BlogEntry.ps1"
