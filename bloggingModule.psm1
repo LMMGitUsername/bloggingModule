@@ -18,7 +18,6 @@
           [Parameter(Mandatory=$true)][String]$readhostinput
       )
       $readhostinput | clip
-	  Write-Host "Paste (Ctrl+v) in the editor of your choice."
   }
   
   <#
@@ -37,19 +36,22 @@ Function Get-BlogEntryOneStep
         [switch]$inGUI
     )
 
+	."$PSScriptRoot\Get-ArticleTagsAndDatetime.ps1"
     if($inGUI.IsPresent) {
 	    ."$PSScriptRoot\Get-BloggingModuleGUI.ps1"
         $stepOne = Get-BloggingModuleGUI
+		$stepTwo = Get-ArticleTagsAndDatetime $stepOne
+		Copy-BlogEntryHtml $stepTwo
 		[System.Windows.MessageBox]::Show('Paste (Ctrl+v) in the editor of your choice.')
     }
     else {
 	    ."$PSScriptRoot\Get-BlogEntry.ps1"
         $stepOne = Get-BlogEntry
+		$stepTwo = Get-ArticleTagsAndDatetime $stepOne
+		Copy-BlogEntryHtml $stepTwo
+		Write-Host "Paste (Ctrl+v) in the editor of your choice."
     }
-
-	."$PSScriptRoot\Get-ArticleTagsAndDatetime.ps1"
-	$stepTwo = Get-ArticleTagsAndDatetime $stepOne 
-	Copy-BlogEntryHtml $stepTwo
+	 
 }
 
 Export-ModuleMember -Function Get-BlogEntryOneStep
