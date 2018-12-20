@@ -9,7 +9,7 @@
   #This comment template is from https://technet.microsoft.com/en-us/magazine/hh360993.aspx
   #
   #>
-Function Get-BlogEntry()
+Function Get-BlogEntry
 {
     Write-Host "Start typing."
 	$readhostinput = Read-Host

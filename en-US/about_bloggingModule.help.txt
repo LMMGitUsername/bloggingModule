@@ -1,0 +1,24 @@
+﻿TOPIC
+    about_bloggingModule
+
+SHORT DESCRIPTION
+    
+
+LONG DESCRIPTION
+    A PowerShell script module that takes user input and outputs it wrapped in the necessary HTML`    for an entry in my online journal but also copies it directly to the clipboard so that it can`    immediately be pasted into the location of your choice without additional action. The`    bloggingModule exists was created in order to save me time and energy on re-writing the same`    HTML code over and over again; now, after having created a working command line version, I`    have added access to the same functionality that was previously available with function`    Get-BlogEntryOneStep only now available in a graphical user interface (GUI)! Use "Get-Help Get-BlogEntryOneStep"`    for more information on how to use Get-BlogEntryOneStep to immediately copy your input wrapped in HTML`    according to the last time that I updated my online journalol. I am not sure what will happen if`    you run the command without access to that site.
+
+EXAMPLES
+    To install the module:
+    1. Ensure that folder bloggingModule is in a directory that is included in $PSModulePath.
+    2. Run: Import-Module bloggingModule
+
+    To use the module:
+    1. Run: Get-BlogEntryOneStep
+       to use Get-BlogEntryOneStep in the command line.
+    2. Run: Get-BlogEntryOneStep -inGUI
+       to use Get-BlogEntryOneStep in an interface!
+
+KEYWORDS
+    blog, bloggingModule, html
+
+SEE ALSO
