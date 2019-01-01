@@ -69,6 +69,9 @@ Function Get-BloggingModuleGUI
     $textbox.Font = $textBoxFont
     $textbox.Multiline = $True #You must set the Multiline property to true to adjust the height of the TextBox control. You can adjust the height by setting the Size property.
 
+	#trying to add scrollbars with info from https://stackoverflow.com/questions/41869700/how-to-set-a-textbox-to-allow-multiple-lines-and-scrollability
+	$textbox.Scrollbars = "Vertical"
+	
     $OKButton = New-Object System.Windows.Forms.Button
     $OKButton.Location = New-Object System.Drawing.Point(800,500)
     $OKButton.Size = New-Object System.Drawing.Size(75,30)
